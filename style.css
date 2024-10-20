@@ -1,0 +1,183 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    color: #ff6347;
+}
+
+/* Section Styling */
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+#home {
+    background-color: #f4f4f4;
+    padding: 100px 0;
+}
+
+#prices, #bikes, #feedback, #login {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+}
+
+.price-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.bike-list {
+    display: flex;
+    justify-content: center;
+}
+
+.bike-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.bike-card img {
+    width: 100%;
+    height: auto;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+form button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff4500;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+/* Login & Sign Up Section */
+.login-signup-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.login-container, .signup-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 40%;
+}
+
+.login-container h2, .signup-container h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 10px;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff4500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .login-signup-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-container, .signup-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}

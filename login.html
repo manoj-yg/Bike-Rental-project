@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yulu Bike Rental - Login & Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">YuluBike</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prices.html">Price</a></li>
+            <li><a href="bikes.html">Bike Section</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login & Sign Up Section -->
+    <section class="section login-signup-section">
+        <div class="login-container">
+            <!-- Login Form -->
+            <h2>Login to Yulu</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div class="signup-container">
+            <!-- Sign Up Form -->
+            <h2>Create a New Account</h2>
+            <form id="signup-form">
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" name="name" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+                <label for="signup-confirm-password">Confirm Password:</label>
+                <input type="password" id="signup-confirm-password" name="confirm-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 YuluBike. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

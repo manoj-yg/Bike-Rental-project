@@ -11,7 +11,7 @@ body {
 
 /* Navbar Styling */
 .navbar {
-    background-color: #333;
+    background-color: hwb(59 6% 12%);
     padding: 10px;
     display: flex;
     justify-content: space-between;

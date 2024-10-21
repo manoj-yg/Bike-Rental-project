@@ -125,8 +125,8 @@ footer {
 /* Login & Sign Up Section */
 .login-signup-section {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 50px;
 }
 

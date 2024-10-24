@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikerZone-Signup</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Grey+Qo&family=Racing+Sans+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Racing Sans One", sans-serif;
+    }
+
+    /* Variables */
+    :root {
+        --main-color: #ff4424;
+        --second-color: #f77214;
+        --text-color: #080a08;
+        --text-alter-color: #868e96;
+        --third-color: #fde628;
+        --bg-color: #fff;
+        --container-color: #faeee4;
+    }
+
+    body {
+        background-color: #fff;
+        background: linear-gradient(to right, #fff, #faeee4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .containers {
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+        position: relative;
+        overflow: hidden;
+        width: 768px;
+        max-width: 100%;
+        min-height: 480px;
+        margin-top: 200px;
+        margin-bottom: 10px;
+    }
+
+    .containers p {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        margin: 20px 0;
+    }
+
+    .containers span {
+        font-size: 12px;
+    }
+
+    .containers a {
+        color: #333;
+        font-size: 13px;
+        text-decoration: none;
+        margin: 15px 0 10px;
+    }
+
+    .containers button {
+        background-color: var(--main-color);
+        color: #fff;
+        font-size: 12px;
+        padding: 10px 45px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .containers button.hidden {
+        background-color: transparent;
+        border-color: #fff;
+    }
+
+    .containers form {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* padding-top: 40px; */
+        padding: 0 40px;
+        height: 100%;
+    }
+
+    .containers input {
+        background-color: #eee;
+        border: none;
+        margin: 8px 0;
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        width: 100%;
+        outline: none;
+    }
+
+    .form-containers {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .sign-ins {
+        left: 0;
+        width: 50%;
+        z-index: 2;
+    }
+
+    .containers.active .sign-ins {
+        transform: translateX(100%);
+    }
+
+    .sign-ups {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .containers.active .sign-ups {
+        transform: translateX(100%);
+        opacity: 1;
+        z-index: 5;
+        animation: move 0.6s;
+    }
+
+    @keyframes move {
+
+        0%,
+        49.99% {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        50%,
+        100% {
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+
+    .social-icons {
+        margin: 20px 0;
+    }
+
+    .social-icons a {
+        border: 1px solid #ccc;
+        border-radius: 20%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 3px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .toggle-containers {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: all 0.6s ease-in-out;
+        border-radius: 150px 0 0 100px;
+        z-index: 1000;
+    }
+
+    .containers.active .toggle-containers {
+        transform: translateX(-100%);
+        border-radius: 0 150px 100px 0;
+    }
+
+    .toggle {
+        background-color: #ff4424;
+        height: 100%;
+        background: linear-gradient(to right, var(--main-color), var(--second-color));
+        color: #fff;
+        position: relative;
+        left: -100%;
+        height: 100%;
+        width: 200%;
+        transform: translateX(0);
+        transition: all 0.6s ease-in-out;
+
+    }
+
+    .containers.active .toggle {
+        transform: translateX(50%);
+    }
+
+    .toggle-panel {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 30px;
+        text-align: center;
+        top: 0;
+        transform: translateX(0);
+        transition: all 0.6s ease-in-out;
+    }
+
+    .toggle-left {
+        transform: translateX(-200%);
+    }
+
+    .containers.active .toggle-left {
+        transform: translateX(0);
+    }
+
+    .toggle-right {
+        right: 0;
+        transform: translateX(0);
+    }
+
+    .containers.active .toggle-right {
+        transform: translateX(200%);
+    }
+</style>
+
+<body>
+
+
+    <!--Header-->
+    <header>
+        <!-- Nav  -->
+        <div class="nav container">
+
+            <!-- Logo -->
+            <a href="#" class="logo"><i class="ri-motorbike-fill"></i> BikerZone</a>
+            <!-- nav links  -->
+            <div class="navbar">
+                <a href="1_Home.html" class="nav-link"><i class="ri-home-7-line"></i> Home</a>
+                <a href="Bikes.html" class="nav-link"><i class="ri-motorbike-line"></i> Bikes</a>
+                <a href="destination.html" class="nav-link"><i class="ri-map-pin-2-line"></i> Destination</a>
+                <a href="reviews.html" class="nav-link"><i class="ri-feedback-line"></i> Reviews</a>
+
+                <!-- Mobile sign up button  -->
+                <a href="#" class="mobile-sign-up">Sign up</a>
+            </div>
+
+            <!-- Sign up Button  -->
+            <a href="Signup.html" class="sign-up"><i class="ri-login-box-line"></i> Sign up</a>
+            <!-- Menu icon -->
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="containers" id="containers">
+        <div class="form-containers sign-ups">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="ri-google-fill"></i></a>
+                    <a href="#" class="icon"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="#" class="icon"><i class="ri-github-fill"></i></a>
+                    <a href="#" class="icon"><i class="ri-linkedin-box-fill"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-containers sign-ins">
+            <form>
+
+                <!-- Signup -->
+
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="ri-google-fill"></i></a>
+                    <a href="#" class="icon"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="#" class="icon"><i class="ri-github-fill"></i></a>
+                    <a href="#" class="icon"><i class="ri-linkedin-box-fill"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-containers">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer icons  -->
+    <div class="social-icons">
+        <a href="#"><i class="ri-twitter-x-fill"></i></i></a>
+        <a href="#"><i class="ri-instagram-fill"></i></a>
+        <a href="#"><i class="ri-github-fill"></i></a>
+        <a href="#"><i class="ri-youtube-fill"></i></a>
+    </div>
+
+
+
+    <!-- copyright -->
+
+    <p class="copyright">&#169;  <i class="ri-motorbike-fill"></i> BikerZone LLC</p>
+
+    <script>
+        const containers = document.getElementById('containers');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            containers.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            containers.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>

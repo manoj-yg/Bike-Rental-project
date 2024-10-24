@@ -247,7 +247,7 @@ gap: 1.5rem;
 }
 .footer-box .logo{
   font-size: 0.9rem;
-  max-width: 80px;
+  max-width: 100px;
   color: var(--bg-color);
   margin-bottom: 1rem;
 }
